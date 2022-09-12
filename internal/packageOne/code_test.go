@@ -1,6 +1,10 @@
 package packageOne
 
-import "testing"
+import (
+	"testing"
+
+	"gorm.io/gorm"
+)
 
 func createUser(t *testing.T, db *gorm.DB) {
 	user := User{ID: "1", Username: "jane", Password: "doe123"}
@@ -35,4 +39,10 @@ func TestServer(t *testing.T) {
 	r := Router(db)
 
 	// Snipped for brewity...
+}
+
+func TestMax(t *testing.T) {
+	t.Logf("Testing Foo")
+	t.Fail()
+	t.Logf("Another log from Foo")
 }

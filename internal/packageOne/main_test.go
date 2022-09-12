@@ -1,5 +1,9 @@
 package packageOne
 
+import (
+	"os"
+)
+
 func init() {
 	// runs once per package
 }
@@ -10,6 +14,7 @@ func SetupTest() {
 
 func TearDownTest()
 func TestMain(m *testing.M) {
+	fmt.Println("packageOne TestMain")
 	os,Exit(m.Run())
 }
 
